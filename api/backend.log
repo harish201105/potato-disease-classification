@@ -1,0 +1,42 @@
+INFO:     Started server process [78656]
+INFO:     Waiting for application startup.
+INFO:main:Loading model from /Users/harish/potato-disease-classification/converted_model.keras
+/opt/anaconda3/envs/llmapp/lib/python3.13/site-packages/keras/src/saving/saving_lib.py:797: UserWarning: Skipping variable loading for optimizer 'adam', because it has 34 variables whereas the saved optimizer has 2 variables. 
+  saveable.load_own_variables(weights_store.get(inner_path))
+INFO:main:Model loaded successfully! Input shape: (None, 256, 256, 3)
+INFO:main:Model output shape: (None, 3)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53647 - "GET /ping HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53650 - "GET /ping HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53660 - "GET /model-status HTTP/1.1" 200 OK
+INFO:main:Real prediction: Late Blight with confidence: 1.000
+INFO:     127.0.0.1:59869 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Late Blight with confidence: 0.999
+INFO:     127.0.0.1:59870 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Healthy with confidence: 0.982
+INFO:     127.0.0.1:59871 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Early Blight with confidence: 0.978
+INFO:     127.0.0.1:59874 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Late Blight with confidence: 0.998
+INFO:     127.0.0.1:59875 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Early Blight with confidence: 0.999
+INFO:     127.0.0.1:59879 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Late Blight with confidence: 0.951
+INFO:     127.0.0.1:59911 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Early Blight with confidence: 0.754
+INFO:     127.0.0.1:59915 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Healthy with confidence: 0.963
+INFO:     127.0.0.1:59923 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Early Blight with confidence: 0.996
+INFO:     127.0.0.1:59996 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Late Blight with confidence: 0.995
+INFO:     127.0.0.1:59996 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Late Blight with confidence: 1.000
+INFO:     127.0.0.1:59997 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Early Blight with confidence: 0.499
+INFO:     127.0.0.1:59997 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Healthy with confidence: 0.963
+INFO:     127.0.0.1:59998 - "POST /predict HTTP/1.1" 200 OK
+INFO:main:Real prediction: Late Blight with confidence: 0.951
+INFO:     127.0.0.1:59998 - "POST /predict HTTP/1.1" 200 OK

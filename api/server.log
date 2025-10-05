@@ -1,0 +1,11 @@
+INFO:     Started server process [72527]
+INFO:     Waiting for application startup.
+INFO:__main__:Loading model from /Users/harish/potato-disease-classification/converted_model.keras
+/opt/anaconda3/envs/llmapp/lib/python3.13/site-packages/keras/src/saving/saving_lib.py:797: UserWarning: Skipping variable loading for optimizer 'adam', because it has 34 variables whereas the saved optimizer has 2 variables. 
+  saveable.load_own_variables(weights_store.get(inner_path))
+INFO:__main__:Model loaded successfully! Input shape: (None, 256, 256, 3)
+INFO:__main__:Model output shape: (None, 3)
+INFO:     Application startup complete.
+ERROR:    [Errno 48] error while attempting to bind on address ('127.0.0.1', 8000): [errno 48] address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
