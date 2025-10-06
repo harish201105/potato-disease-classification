@@ -20,15 +20,15 @@ CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
 def load_model():
     global MODEL
     try:
-        # Check if converted model exists first, then fallback to original models
+        # Check original models first for better accuracy, then fallback to converted
         model_paths = [
-            "/Users/harish/potato-disease-classification/converted_model.keras",
-            "../converted_model.keras",
             "/Users/harish/potato-disease-classification/potatoes.h5",
             "../potatoes.h5",
-            "../saved_models/1",
             "/Users/harish/potato-disease-classification/saved_models/1",
-            os.path.join(os.path.dirname(os.path.dirname(__file__)), "saved_models", "1")
+            "../saved_models/1",
+            os.path.join(os.path.dirname(os.path.dirname(__file__)), "saved_models", "1"),
+            "/Users/harish/potato-disease-classification/converted_model.keras",
+            "../converted_model.keras"
         ]
         
         model_path = None
@@ -53,8 +53,20 @@ def load_model():
             except RuntimeError as e:
                 logger.warning(f"GPU setup warning: {e}")
         
-        # Load the model - Keras 3 format should load directly
-        MODEL = tf.keras.models.load_model(model_path)
+        # Load the model - try original first with compatibility fix, then converted
+        if model_path.endswith('.h5'):
+            # Original model - load without compilation and recompile for Keras 3 compatibility
+            MODEL = tf.keras.models.load_model(model_path, compile=False)
+            MODEL.compile(
+                optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+                loss=tf.keras.losses.CategoricalCrossentropy(),
+                metrics=['accuracy']
+            )
+            logger.info("Original model loaded and recompiled for Keras 3 compatibility")
+        else:
+            # Converted model - load directly
+            MODEL = tf.keras.models.load_model(model_path)
+            logger.info("Converted model loaded directly")
         logger.info(f"Model loaded successfully! Input shape: {MODEL.input_shape}")
         logger.info(f"Model output shape: {MODEL.output_shape}")
         
