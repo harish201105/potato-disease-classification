@@ -1,5 +1,41 @@
 # Potato Disease Classification
 
+## Project Description
+
+This is an end-to-end machine learning project that uses deep learning to classify potato diseases from leaf images. The system can identify three categories:
+
+- **Healthy Potatoes** - Normal, disease-free potato plants
+- **Early Blight** - A common fungal disease affecting potato leaves
+- **Late Blight** - A serious plant disease that can devastate potato crops
+
+### Key Features
+
+🔬 **AI-Powered Disease Detection**: Uses a Convolutional Neural Network (CNN) trained on the PlantVillage dataset to accurately classify potato diseases from photographs.
+
+🌐 **Multi-Platform Support**:
+
+- **Web Application**: React.js frontend for easy browser-based image upload and classification
+- **Mobile App**: React Native application for on-the-go disease detection using camera or photo library
+- **REST API**: FastAPI backend providing reliable and fast inference endpoints
+
+📱 **Mobile-Optimized**: TensorFlow Lite models ensure fast inference on mobile devices with minimal resource usage.
+
+🚀 **Local Development Ready**: Complete setup for local development without requiring cloud services or external dependencies.
+
+### Technology Stack
+
+- **Machine Learning**: TensorFlow/Keras for model training and inference
+- **Backend**: FastAPI for high-performance API endpoints
+- **Frontend**: React.js for web interface
+- **Mobile**: React Native for cross-platform mobile application
+- **Model Optimization**: TensorFlow Lite for mobile deployment
+
+### Use Cases
+
+- **Farmers**: Early detection of potato diseases to prevent crop loss
+- **Agricultural Researchers**: Tool for monitoring and studying plant diseases
+- **Educational**: Learning resource for understanding plant pathology and machine learning applications in agriculture
+
 ## Setup for Python:
 
 1. Install Python ([Setup instructions](https://wiki.python.org/moin/BeginnersGuide))
